@@ -1,2 +1,2 @@
-# react-native-ios
+# React Native IOS
 React Native IOS UI Kit
