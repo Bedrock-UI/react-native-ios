@@ -59,6 +59,7 @@ function Button({ error = false, fullWidth = false, title, variant = 'filled', .
   return (
     <TouchableOpacity
       {...props}
+      activeOpacity={1}
       style={{
         ...variantButtonStyles,
         ...(error ? { ...buttonStyles.error } : {}),
