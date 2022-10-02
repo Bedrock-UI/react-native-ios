@@ -7,12 +7,36 @@ import type { Props } from './Button.types';
 const buttonStyles = StyleSheet.create({
   base: {
     alignSelf: 'flex-start',
-    borderRadius: 4,
+    fontSize: theme.typography.body1.fontSize,
+    lineHeight: theme.typography.body1.lineHeight,
+  },
+
+  // sizes
+  small: {
+    borderRadius: 24,
+    height: 36,
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingTop: 6,
+    paddingBottom: 6,
+  },
+  medium: {
+    borderRadius: 12,
+    height: 48,
     paddingLeft: 16,
     paddingRight: 16,
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingTop: 12,
+    paddingBottom: 12,
   },
+  large: {
+    height: 56,
+    borderRadius: 12,
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 16,
+    paddingBottom: 16,
+  },
+  // variants
   plain: {},
   gray: {
     backgroundColor: theme.palette.neutral[500],
@@ -33,10 +57,10 @@ const buttonStyles = StyleSheet.create({
 
 const textStyles = StyleSheet.create({
   base: {
-    fontSize: theme.typography.body.fontSize,
-    lineHeight: theme.typography.body.lineHeight,
+    fontSize: theme.typography.body1.fontSize,
+    lineHeight: theme.typography.body1.lineHeight,
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontWeight: '500',
   },
   plain: {
     color: theme.palette.primary.main,
@@ -50,24 +74,45 @@ const textStyles = StyleSheet.create({
   filled: {
     color: theme.palette.white,
   },
+  small: {
+    fontSize: theme.typography.body2.fontSize,
+    lineHeight: theme.typography.body2.lineHeight,
+  },
+  medium: {},
+  large: {},
 });
 
-function Button({ error = false, fullWidth = false, title, variant = 'filled', ...props }: Props) {
-  const variantButtonStyles = useMemo(() => buttonStyles[variant], [variant]);
-  const variantTextStyles = useMemo(() => textStyles[variant], [variant]);
+function Button({
+  error = false,
+  fullWidth = false,
+  size = 'medium',
+  title,
+  variant = 'filled',
+  ...props
+}: Props) {
+  const computedButtonStyles = useMemo(
+    () => ({
+      ...buttonStyles.base,
+      ...buttonStyles[variant],
+      ...buttonStyles[size],
+      ...(error ? { ...buttonStyles.error } : {}),
+      ...(fullWidth ? { ...buttonStyles.fullWidth } : {}),
+    }),
+    [error, fullWidth, size, variant]
+  );
+
+  const computedTextStyles = useMemo(
+    () => ({
+      ...textStyles.base,
+      ...textStyles[size],
+      ...textStyles[variant],
+    }),
+    [size, variant]
+  );
 
   return (
-    <TouchableOpacity
-      {...props}
-      activeOpacity={1}
-      style={{
-        ...variantButtonStyles,
-        ...(error ? { ...buttonStyles.error } : {}),
-        ...(fullWidth ? { ...buttonStyles.fullWidth } : {}),
-        ...buttonStyles.base,
-      }}
-    >
-      <Text style={{ ...variantTextStyles, ...textStyles.base }}>{title}</Text>
+    <TouchableOpacity {...props} activeOpacity={1} style={computedButtonStyles}>
+      <Text style={computedTextStyles}>{title}</Text>
     </TouchableOpacity>
   );
 }

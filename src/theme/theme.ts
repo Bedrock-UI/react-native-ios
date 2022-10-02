@@ -18,8 +18,12 @@ const theme = {
       fontSize: 20,
       lineHeight: 24,
     },
-    body: {
+    body1: {
       fontSize: 18,
+      lineHeight: 24,
+    },
+    body2: {
+      fontSize: 16,
       lineHeight: 24,
     },
     input: {

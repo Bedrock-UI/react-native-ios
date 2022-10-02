@@ -8,21 +8,32 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 0,
   },
+
+  // flex direction
   column: {
     flexDirection: 'column',
   },
   row: {
     flexDirection: 'row',
   },
+
+  // flex wrap
+  nowrap: {
+    flexWrap: 'nowrap',
+  },
+  wrap: {
+    flexWrap: 'wrap',
+  },
 });
 
-function Flex({ direction = 'row', ...props }: Props) {
+function Flex({ direction = 'row', wrap = 'wrap', ...props }: Props) {
   return (
     <SafeAreaView
       {...props}
       style={{
         ...styles.flex,
         ...styles[direction],
+        ...styles[wrap],
       }}
     />
   );
