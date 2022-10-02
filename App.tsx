@@ -5,7 +5,7 @@ import { TextInput } from 'components/TextInput';
 
 function App() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ margin: 16 }}>
       <SafeAreaView style={{ marginVertical: 16 }}>
         <Flex>
           <Button size="small" title="Filled Small" variant="filled" />
