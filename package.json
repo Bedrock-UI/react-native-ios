@@ -13,7 +13,7 @@
     "build": "pnpm rm:build && pnpm build:cjs && pnpm build:esm",
     "build:cjs": "tsc --project tsconfig.build-cjs.json && tsc-alias -p tsconfig.build-cjs.json",
     "build:esm": "tsc --project tsconfig.build-esm.json && tsc-alias -p tsconfig.build-esm.json",
-    "dev": "expo start",
+    "dev": "expo start -c",
     "dev:clean": "expo r -c",
     "rm:build": "rimraf lib",
     "storybook": "start-storybook -p 6006",

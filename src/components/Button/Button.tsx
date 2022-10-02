@@ -33,8 +33,8 @@ const buttonStyles = StyleSheet.create({
 
 const textStyles = StyleSheet.create({
   base: {
-    fontSize: 18,
-    lineHeight: 24,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
     textAlign: 'center',
     fontWeight: 'bold',
   },

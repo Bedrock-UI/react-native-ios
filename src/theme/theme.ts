@@ -1,6 +1,32 @@
 import { PlatformColor } from 'react-native';
 
 const theme = {
+  typography: {
+    title1: {
+      fontSize: 34,
+      lineHeight: 40,
+    },
+    title2: {
+      fontSize: 28,
+      lineHeight: 34,
+    },
+    title3: {
+      fontSize: 24,
+      lineHeight: 28,
+    },
+    title4: {
+      fontSize: 20,
+      lineHeight: 24,
+    },
+    body: {
+      fontSize: 18,
+      lineHeight: 24,
+    },
+    input: {
+      fontSize: 18,
+      lineHeight: 20,
+    },
+  },
   palette: {
     background: PlatformColor('systemGray6'),
     error: PlatformColor('systemRed'),
