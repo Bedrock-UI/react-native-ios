@@ -9,6 +9,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "outDir": "lib/esm",
+    "skipLibCheck": true,
     "strict": true,
     "target": "es2019"
   },
