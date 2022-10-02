@@ -13,8 +13,8 @@
     "build": "pnpm rm:build && pnpm build:cjs && pnpm build:esm",
     "build:cjs": "tsc --project tsconfig.build-cjs.json && tsc-alias -p tsconfig.build-cjs.json",
     "build:esm": "tsc --project tsconfig.build-esm.json && tsc-alias -p tsconfig.build-esm.json",
-    "build-storybook": "build-storybook",
-    "dev": "start-storybook -p 6006",
+    "dev": "expo start",
+    "dev:clean": "expo r -c",
     "rm:build": "rimraf lib",
     "storybook": "start-storybook -p 6006",
     "typecheck": "tsc --noEmit"
@@ -24,13 +24,17 @@
   "devDependencies": {
     "@types/react": "^18.0.21",
     "@types/react-native": "^0.70.4",
+    "expo": "^46.0.10",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.70.1",
     "rimraf": "^3.0.2",
     "tsc-alias": "^1.7.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "@babel/core": "^7.19.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "metro-react-native-babel-preset": "^0.72.3"
   },
   "peerDependencies": {
     "react": "^18",
