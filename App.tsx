@@ -1,11 +1,16 @@
-import { SafeAreaView } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { useState } from 'react';
+import { Platform, PlatformColor, SafeAreaView } from 'react-native';
 import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
+import { TabBar } from 'components/TabBar';
 import { TextInput } from 'components/TextInput';
 
 function App() {
+  const [activeTab, setActiveTab] = useState<number>(0);
+
   return (
-    <SafeAreaView style={{ margin: 16 }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <SafeAreaView style={{ marginVertical: 16 }}>
         <Flex>
           <Button size="small" title="Filled Small" variant="filled" />
@@ -36,6 +41,32 @@ function App() {
       <Flex>
         <TextInput value="Search" />
       </Flex>
+
+      <TabBar>
+        <TabBar.Tab
+          icon={
+            <Ionicons
+              color={activeTab === 0 ? PlatformColor('systemBlue') : PlatformColor('systemGray3')}
+              name="md-checkmark-circle"
+              size={24}
+            />
+          }
+          label="Test"
+          onPress={() => setActiveTab(0)}
+        />
+
+        <TabBar.Tab
+          icon={
+            <Ionicons
+              color={activeTab === 1 ? PlatformColor('systemBlue') : PlatformColor('systemGray3')}
+              name="md-checkmark-circle"
+              size={24}
+            />
+          }
+          label="Test 2"
+          onPress={() => setActiveTab(1)}
+        />
+      </TabBar>
     </SafeAreaView>
   );
 }

@@ -1,7 +1,11 @@
-import type { ViewProps } from 'react-native';
+import type { TouchableOpacityProps, ViewProps } from 'react-native';
 
 export interface Props {
   children: ViewProps['children'];
 }
 
-export interface TabProps {}
+export interface TabProps {
+  icon: ViewProps['children'];
+  label?: string;
+  onPress: TouchableOpacityProps['onPress'];
+}
