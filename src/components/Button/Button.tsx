@@ -111,7 +111,7 @@ function Button({
   );
 
   return (
-    <TouchableOpacity {...props} activeOpacity={1} style={computedButtonStyles}>
+    <TouchableOpacity {...props} style={computedButtonStyles}>
       <Text style={computedTextStyles}>{title}</Text>
     </TouchableOpacity>
   );

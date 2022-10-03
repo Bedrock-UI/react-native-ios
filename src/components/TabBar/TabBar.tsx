@@ -36,12 +36,12 @@ function TabBar({ children }: Props) {
   return <SafeAreaView style={tabBarStyles.base}>{children}</SafeAreaView>;
 }
 
-function Tab({ icon, label = '', onPress }: TabProps) {
+function Tab({ icon, label = '', labelColor, onPress }: TabProps) {
   return (
     <TouchableOpacity activeOpacity={1} onPress={onPress} style={tabStyles.base}>
       {icon}
 
-      {label && <Text style={tabStyles.label}>{label}</Text>}
+      {label && <Text style={{ ...tabStyles.label, color: labelColor }}>{label}</Text>}
     </TouchableOpacity>
   );
 }

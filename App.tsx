@@ -5,12 +5,19 @@ import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
 import { TabBar } from 'components/TabBar';
 import { TextInput } from 'components/TextInput';
+import { TopNavigation } from 'components/TopNavigation';
 
 function App() {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <TopNavigation
+        left={{ icon: <Ionicons name="chevron-back" size={32} />, title: 'Back' }}
+        right={{ title: 'Save' }}
+        title="Settings"
+      />
+
       <SafeAreaView style={{ marginVertical: 16 }}>
         <Flex>
           <Button size="small" title="Filled Small" variant="filled" />
@@ -52,6 +59,7 @@ function App() {
             />
           }
           label="Test"
+          labelColor={activeTab === 0 ? PlatformColor('systemBlue') : PlatformColor('systemGray3')}
           onPress={() => setActiveTab(0)}
         />
 
@@ -64,6 +72,7 @@ function App() {
             />
           }
           label="Test 2"
+          labelColor={activeTab === 1 ? PlatformColor('systemBlue') : PlatformColor('systemGray3')}
           onPress={() => setActiveTab(1)}
         />
       </TabBar>
