@@ -10,7 +10,7 @@ on:
       - '**'
 
 jobs:
-  update-core-version:
+  update-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
