@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-      - '**'
+      - './**'
 
 jobs:
   update-version:
@@ -21,12 +21,16 @@ jobs:
       - run: git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - run: git config user.name "$GITHUB_ACTOR"
       - run: npm version patch
+        working-directory: ./
         if: ${{ !contains(github.event.head_commit.message, 'minor') && !contains(github.event.head_commit.message, 'major') }}
       - run: npm version minor
+        working-directory: ./
         if: ${{ contains(github.event.head_commit.message, 'minor') }}
       - run: npm version major
+        working-directory: ./
         if: ${{ contains(github.event.head_commit.message, 'major') }}
       - run: VERSION=$(node -p "require('./package.json').version")
+        working-directory: ./
       - run: git tag ${VERSION}
       - run: git add .
       - run: git commit -m "Updating Version"
@@ -34,7 +38,10 @@ jobs:
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --tags
       - run: npm install -g pnpm
       - run: pnpm install --frozen-lockfile
+        working-directory: ./
       - run: pnpm build
+        working-directory: ./
       - run: npm publish --access public
+        working-directory: ./
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
