@@ -10,7 +10,7 @@
   "types": "lib/cjs/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "pnpm rm:build && pnpm build:cjs && pnpm build:esm",
+    "build": "npm run rm:build && npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc --project tsconfig.build-cjs.json && tsc-alias -p tsconfig.build-cjs.json",
     "build:esm": "tsc --project tsconfig.build-esm.json && tsc-alias -p tsconfig.build-esm.json",
     "dev": "expo start -c",
