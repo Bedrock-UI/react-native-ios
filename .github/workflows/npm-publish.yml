@@ -35,10 +35,9 @@ jobs:
       - run: git commit -m "Updating Version"
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --follow-tags
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --tags
-      - run: npm install -g pnpm
-      - run: pnpm install --frozen-lockfile
+      - run: npm install --force
         working-directory: ./
-      - run: pnpm build
+      - run: npm build
         working-directory: ./
       - run: npm publish --access public
         working-directory: ./
