@@ -34,7 +34,7 @@ jobs:
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --tags
       - run: npm install --force
         working-directory: ./
-      - run: npm build
+      - run: npm run build
         working-directory: ./
       - run: npm publish --access public
         working-directory: ./
