@@ -31,6 +31,7 @@ jobs:
         working-directory: ./
       - run: git tag ${VERSION}
       - run: git add .
+      - run: git status
       - run: git commit -m "Updating Version"
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --follow-tags
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --tags
