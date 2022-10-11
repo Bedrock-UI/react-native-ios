@@ -26,6 +26,10 @@ const theme = {
       fontSize: 16,
       lineHeight: 24,
     },
+    caption: {
+      fontSize: 14,
+      lineHeight: 20,
+    },
     input: {
       fontSize: 18,
       lineHeight: 20,
