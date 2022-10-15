@@ -8,12 +8,16 @@ import { Table } from 'components/Table';
 import { TextInput } from 'components/TextInput';
 import { TopNavigation } from 'components/TopNavigation';
 
+import { useActionSheet } from 'hooks/useActionSheet';
+
 function App() {
+  const { showActionSheetWithOptions } = useActionSheet();
+
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
     <SafeAreaView style={{ backgroundColor: '#F2F1F6', flex: 1 }}>
-      <ScrollView style={{ marginHorizontal: 16 }}>
+      <ScrollView style={{ paddingHorizontal: 16 }}>
         <TopNavigation
           left={{ icon: <Ionicons name="chevron-back" size={32} />, title: 'Back' }}
           right={{ title: 'Save' }}
@@ -55,6 +59,18 @@ function App() {
           <Table
             header="Networks"
             rows={[{ rightIcon: true, title: 'Z17AHW' }, { title: 'HP24' }, { title: 'My Wifi' }]}
+          />
+        </Flex>
+
+        <Flex>
+          <Button
+            title="Action Sheet"
+            onPress={() =>
+              showActionSheetWithOptions({
+                cancel: { onPress: () => console.log('cancel'), title: 'Cancel' },
+                options: [{ onPress: () => console.log('save'), title: 'Save' }],
+              })
+            }
           />
         </Flex>
       </ScrollView>
