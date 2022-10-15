@@ -6,7 +6,6 @@ import type { Props } from './Flex.types';
 const styles = StyleSheet.create({
   flex: {
     display: 'flex',
-    flex: 0,
   },
 
   // flex direction
@@ -24,15 +23,32 @@ const styles = StyleSheet.create({
   wrap: {
     flexWrap: 'wrap',
   },
+
+  // justify content
+  'justify-content-center': {
+    justifyContent: 'center',
+  },
+  'justify-content-flex-start': {
+    justifyContent: 'flex-start',
+  },
+  'justify-content-space-between': {
+    justifyContent: 'space-between',
+  },
 });
 
-function Flex({ direction = 'row', wrap = 'wrap', ...props }: Props) {
+function Flex({
+  direction = 'row',
+  justifyContent = 'flex-start',
+  wrap = 'wrap',
+  ...props
+}: Props) {
   return (
     <SafeAreaView
       {...props}
       style={{
         ...styles.flex,
         ...styles[direction],
+        ...styles[`justify-content-${justifyContent}`],
         ...styles[wrap],
       }}
     />

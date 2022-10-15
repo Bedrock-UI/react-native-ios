@@ -6,7 +6,7 @@ import type { Props } from './TextInput.types';
 
 const textInputStyles = StyleSheet.create({
   base: {
-    backgroundColor: theme.palette.neutral[600],
+    backgroundColor: theme.palette.neutral[500],
     borderRadius: 8,
     color: theme.palette.neutral[100],
     height: 36,

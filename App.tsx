@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useState } from 'react';
-import { PlatformColor, SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
 import { TabBar } from 'components/TabBar';
@@ -54,7 +54,7 @@ function App() {
         <Flex>
           <Table
             header="Networks"
-            rows={[{ title: 'Z17AHW' }, { title: 'HP24' }, { title: 'My Wifi' }]}
+            rows={[{ rightIcon: true, title: 'Z17AHW' }, { title: 'HP24' }, { title: 'My Wifi' }]}
           />
         </Flex>
       </ScrollView>
