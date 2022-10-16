@@ -2,21 +2,33 @@ import { PlatformColor } from 'react-native';
 
 const theme = {
   typography: {
-    title1: {
-      fontSize: 34,
+    display1: {
+      fontSize: 100,
+      lineHeight: 104,
+    },
+    h1: {
+      fontSize: 36,
       lineHeight: 40,
     },
-    title2: {
-      fontSize: 28,
-      lineHeight: 34,
+    h2: {
+      fontSize: 32,
+      lineHeight: 36,
     },
-    title3: {
+    h3: {
+      fontSize: 28,
+      lineHeight: 32,
+    },
+    h4: {
       fontSize: 24,
       lineHeight: 28,
     },
-    title4: {
+    h5: {
       fontSize: 20,
       lineHeight: 24,
+    },
+    h6: {
+      fontSize: 16,
+      lineHeight: 20,
     },
     body1: {
       fontSize: 18,
