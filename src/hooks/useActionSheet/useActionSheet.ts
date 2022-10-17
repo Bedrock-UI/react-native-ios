@@ -8,7 +8,9 @@ interface Option {
   title: string;
 }
 
-interface CancelOption extends Omit<Option, 'destructive'> {}
+interface CancelOption extends Omit<Option, 'destructive' | 'onPress'> {
+  onPress?: () => void;
+}
 
 interface Options {
   cancel?: CancelOption;
@@ -35,7 +37,7 @@ function useActionSheet() {
         userInterfaceStyle: 'dark',
       },
       (selectedIndex: number) => {
-        if (cancel && selectedIndex === 0) {
+        if (cancel && cancel.onPress && selectedIndex === 0) {
           return cancel.onPress();
         }
 
