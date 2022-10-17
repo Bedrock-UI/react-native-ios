@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import { theme } from 'theme';
 
 import type { Props } from './Flex.types';
 
@@ -40,12 +41,35 @@ function Flex({
   direction = 'row',
   justifyContent = 'flex-start',
   wrap = 'wrap',
+
+  // margins
+  m = 0,
+  mt = 0,
+  mb = 0,
+  ml = 0,
+  mr = 0,
+  mx = 0,
+  my = 0,
   ...props
 }: Props) {
+  const marginStyles = useMemo(
+    () => ({
+      margin: theme.spacing(m),
+      marginTop: theme.spacing(mt),
+      marginBottom: theme.spacing(mb),
+      marginLeft: theme.spacing(ml),
+      marginRight: theme.spacing(mr),
+      marginHorizontal: theme.spacing(mx),
+      marginVertical: theme.spacing(my),
+    }),
+    [m, mt, mb, ml, mr, mx, my]
+  );
+
   return (
     <SafeAreaView
       {...props}
       style={{
+        ...marginStyles,
         ...styles.flex,
         ...styles[direction],
         ...styles[`justify-content-${justifyContent}`],

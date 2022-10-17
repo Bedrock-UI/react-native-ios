@@ -65,6 +65,7 @@ const theme = {
     },
     white: '#FFFFFF',
   },
+  spacing: (value: number) => value * 4,
 };
 
 export default theme;
