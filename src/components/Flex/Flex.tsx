@@ -43,13 +43,13 @@ function Flex({
   wrap = 'wrap',
 
   // margins
-  m = 0,
-  mt = 0,
-  mb = 0,
-  ml = 0,
-  mr = 0,
-  mx = 0,
-  my = 0,
+  m,
+  mt,
+  mb,
+  ml,
+  mr,
+  mx,
+  my,
   ...props
 }: Props) {
   const marginStyles = useMemo(

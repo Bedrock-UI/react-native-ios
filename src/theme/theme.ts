@@ -65,7 +65,13 @@ const theme = {
     },
     white: '#FFFFFF',
   },
-  spacing: (value: number) => value * 4,
+  spacing: (value: number | undefined) => {
+    if (value === undefined) {
+      return undefined;
+    }
+
+    return value * 4;
+  },
 };
 
 export default theme;
