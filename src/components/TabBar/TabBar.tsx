@@ -27,6 +27,7 @@ const tabStyles = StyleSheet.create({
     flex: 0,
     flexDirection: 'column',
     justifyContent: 'center',
+    width: '100%',
   },
   label: {
     fontSize: 12,
