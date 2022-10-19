@@ -6,6 +6,7 @@ export interface Props {
   justifyContent?: 'center' | 'flex-start' | 'space-between';
   wrap?: 'nowrap' | 'wrap';
 
+  // margins
   m?: number;
   mb?: number;
   mx?: number;
@@ -13,4 +14,16 @@ export interface Props {
   mr?: number;
   mt?: number;
   my?: number;
+
+  // padding
+  p?: number;
+  pb?: number;
+  px?: number;
+  pl?: number;
+  pr?: number;
+  pt?: number;
+  py?: number;
+
+  // width
+  width?: number | string;
 }

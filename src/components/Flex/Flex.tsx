@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
 });
 
 function Flex({
+  // flex properties
   direction = 'row',
   justifyContent = 'flex-start',
   wrap = 'wrap',
@@ -50,6 +51,18 @@ function Flex({
   mr,
   mx,
   my,
+
+  // padding
+  p,
+  pt,
+  pb,
+  pl,
+  pr,
+  px,
+  py,
+
+  // width
+  width,
   ...props
 }: Props) {
   const marginStyles = useMemo(
@@ -65,15 +78,30 @@ function Flex({
     [m, mt, mb, ml, mr, mx, my]
   );
 
+  const paddingStyles = useMemo(
+    () => ({
+      padding: theme.spacing(p),
+      paddingTop: theme.spacing(pt),
+      paddingBottom: theme.spacing(pb),
+      paddingLeft: theme.spacing(pl),
+      paddingRight: theme.spacing(pr),
+      paddingHorizontal: theme.spacing(px),
+      paddingVertical: theme.spacing(py),
+    }),
+    [p, pt, pb, pl, pr, px, py]
+  );
+
   return (
     <SafeAreaView
       {...props}
       style={{
-        ...marginStyles,
         ...styles.flex,
         ...styles[direction],
         ...styles[`justify-content-${justifyContent}`],
         ...styles[wrap],
+        ...marginStyles,
+        ...paddingStyles,
+        width,
       }}
     />
   );
