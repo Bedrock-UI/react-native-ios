@@ -37,15 +37,11 @@ function useActionSheet() {
         userInterfaceStyle: 'dark',
       },
       (selectedIndex: number) => {
-        if (cancel && cancel.onPress && selectedIndex === 0) {
-          return cancel.onPress();
-        }
+        const option = actionSheetOptions[selectedIndex];
 
-        if (cancel) {
-          return options[selectedIndex - 1].onPress();
+        if (option && option.onPress) {
+          return option.onPress();
         }
-
-        return options[selectedIndex].onPress();
       }
     );
   }, []);
