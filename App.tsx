@@ -1,68 +1,66 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useState } from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
-import { TabBar } from 'components/TabBar';
+import { HorizontalScroll } from 'components/HorizontalScroll';
 import { Table } from 'components/Table';
 import { TextInput } from 'components/TextInput';
 import { TopNavigation } from 'components/TopNavigation';
 
 import { useActionSheet } from 'hooks/useActionSheet';
+import { theme } from 'theme';
 
 function App() {
   const { showActionSheetWithOptions } = useActionSheet();
 
-  const [activeTab, setActiveTab] = useState<number>(0);
-
   return (
-    <SafeAreaView style={{ backgroundColor: '#F2F1F6', flex: 1 }}>
-      <ScrollView style={{ paddingHorizontal: 16 }}>
+    <SafeAreaView style={{ backgroundColor: theme.palette.neutral[600], height: '100%' }}>
+      <ScrollView>
         <TopNavigation
           left={{ icon: <Ionicons name="chevron-back" size={32} />, title: 'Back' }}
           right={{ title: 'Save' }}
           title="Settings"
         />
 
-        <SafeAreaView style={{ marginVertical: 16 }}>
-          <Flex>
+        <Flex my={4}>
+          <HorizontalScroll>
             <Button size="small" title="Filled Small" variant="filled" />
             <Button size="small" title="Gray Small" variant="gray" />
             <Button size="small" title="Plain Small" variant="plain" />
             <Button size="small" title="Tinted Small" variant="tinted" />
-          </Flex>
-        </SafeAreaView>
+          </HorizontalScroll>
+        </Flex>
 
-        <SafeAreaView style={{ marginVertical: 16 }}>
-          <Flex>
+        <Flex my={4}>
+          <HorizontalScroll>
             <Button title="Filled Medium" variant="filled" />
             <Button title="Gray Medium" variant="gray" />
             <Button title="Plain Medium" variant="plain" />
             <Button title="Tinted Medium" variant="tinted" />
-          </Flex>
-        </SafeAreaView>
+          </HorizontalScroll>
+        </Flex>
 
-        <SafeAreaView style={{ marginVertical: 16 }}>
-          <Flex>
+        <Flex my={4}>
+          <HorizontalScroll>
             <Button size="large" title="Filled Large" variant="filled" />
             <Button size="large" title="Gray Large" variant="gray" />
             <Button size="large" title="Plain Large" variant="plain" />
             <Button size="large" title="Tinted Large" variant="tinted" />
-          </Flex>
-        </SafeAreaView>
+          </HorizontalScroll>
+        </Flex>
 
-        <Flex>
+        <Flex my={4}>
           <TextInput value="Search" />
         </Flex>
 
-        <Flex>
+        <Flex my={4}>
           <Table
             header="Networks"
             rows={[{ rightIcon: true, title: 'Z17AHW' }, { title: 'HP24' }, { title: 'My Wifi' }]}
           />
         </Flex>
 
-        <Flex>
+        <Flex my={4}>
           <Button
             title="Action Sheet"
             onPress={() =>

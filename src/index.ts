@@ -2,6 +2,7 @@
 export { Button } from 'components/Button';
 export { Flex } from 'components/Flex';
 export { Heading } from 'components/Heading';
+export { HorizontalScroll } from 'components/HorizontalScroll';
 export { Switch } from 'components/Switch';
 export { TabBar } from 'components/TabBar';
 export { Table } from 'components/Table';
