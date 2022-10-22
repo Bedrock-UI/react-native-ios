@@ -106,6 +106,7 @@ function Flex({
           ...styles[wrap],
           ...marginStyles,
           ...paddingStyles,
+          height,
           width,
         },
         style,
