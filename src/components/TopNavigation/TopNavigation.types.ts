@@ -6,7 +6,7 @@ interface LinkProps {
 }
 
 export interface Props {
-  left: LinkProps;
+  left?: LinkProps;
   right?: LinkProps;
   title?: string;
 }
