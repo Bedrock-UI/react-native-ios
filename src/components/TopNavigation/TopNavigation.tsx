@@ -35,7 +35,7 @@ function TopNavigation({ left, right, title = '' }: Props) {
   return (
     <SafeAreaView style={topNavigationStyles.base}>
       <TouchableOpacity style={topNavigationStyles.button}>
-        <Text style={topNavigationStyles.buttonText}>{left.title}</Text>
+        <Text style={topNavigationStyles.buttonText}>{left?.title || ''}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
