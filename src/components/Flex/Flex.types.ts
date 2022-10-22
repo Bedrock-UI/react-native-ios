@@ -11,8 +11,8 @@ export interface Props {
   m?: number;
   mb?: number;
   mx?: number;
-  ml?: number;
-  mr?: number;
+  ml?: number | 'auto';
+  mr?: number | 'auto';
   mt?: number;
   my?: number;
 
@@ -25,6 +25,7 @@ export interface Props {
   pt?: number;
   py?: number;
 
-  // width
+  // sizing
+  height?: number | string;
   width?: number | string;
 }

@@ -64,7 +64,8 @@ function Flex({
   // style
   style,
 
-  // width
+  // sizing
+  height,
   width,
   ...props
 }: Props) {
@@ -98,7 +99,6 @@ function Flex({
     <SafeAreaView
       {...props}
       style={[
-        style,
         {
           ...styles.flex,
           ...styles[direction],
@@ -108,6 +108,7 @@ function Flex({
           ...paddingStyles,
           width,
         },
+        style,
       ]}
     />
   );
