@@ -61,6 +61,9 @@ function Flex({
   px,
   py,
 
+  // style
+  style,
+
   // width
   width,
   ...props
@@ -94,15 +97,18 @@ function Flex({
   return (
     <SafeAreaView
       {...props}
-      style={{
-        ...styles.flex,
-        ...styles[direction],
-        ...styles[`justify-content-${justifyContent}`],
-        ...styles[wrap],
-        ...marginStyles,
-        ...paddingStyles,
-        width,
-      }}
+      style={[
+        style,
+        {
+          ...styles.flex,
+          ...styles[direction],
+          ...styles[`justify-content-${justifyContent}`],
+          ...styles[wrap],
+          ...marginStyles,
+          ...paddingStyles,
+          width,
+        },
+      ]}
     />
   );
 }

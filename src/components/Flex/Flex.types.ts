@@ -4,6 +4,7 @@ export interface Props {
   children?: ViewProps['children'];
   direction?: 'column' | 'row';
   justifyContent?: 'center' | 'flex-start' | 'space-between';
+  style: ViewProps['style'];
   wrap?: 'nowrap' | 'wrap';
 
   // margins
