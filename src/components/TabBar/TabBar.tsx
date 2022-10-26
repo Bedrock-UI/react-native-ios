@@ -24,10 +24,9 @@ const tabStyles = StyleSheet.create({
   base: {
     alignItems: 'center',
     display: 'flex',
-    flex: 0,
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    width: '100%',
   },
   label: {
     fontSize: 12,

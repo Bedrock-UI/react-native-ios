@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView } from 'react-native';
 import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
 import { HorizontalScroll } from 'components/HorizontalScroll';
+import { TabBar } from 'components/TabBar';
 import { Table } from 'components/Table';
 import { TextInput } from 'components/TextInput';
 import { TopNavigation } from 'components/TopNavigation';
@@ -71,6 +72,32 @@ function App() {
             }
           />
         </Flex>
+
+        <TabBar>
+          <TabBar.Tab
+            icon={<Ionicons name="list-circle-outline" size={28} />}
+            onPress={() => {
+              console.log('here 1');
+            }}
+          />
+
+          <TabBar.Tab
+            icon={<Ionicons name="checkmark-circle-outline" size={28} />}
+            onPress={() => console.log('here 2')}
+          />
+
+          <TabBar.Tab
+            icon={<Ionicons name="stats-chart-outline" size={28} />}
+            onPress={() => console.log('here 3')}
+          />
+
+          <TabBar.Tab
+            icon={<Ionicons name="timer-outline" size={28} />}
+            onPress={() => {
+              console.log('here 4');
+            }}
+          />
+        </TabBar>
       </ScrollView>
     </SafeAreaView>
   );
