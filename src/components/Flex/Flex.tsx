@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { theme } from 'theme';
+import { useSpacing } from 'hooks/useSpacing';
 
 import type { Props } from './Flex.types';
 
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
   'justify-content-center': {
     justifyContent: 'center',
   },
+  'justify-content-flex-end': {
+    justifyContent: 'flex-end',
+  },
   'justify-content-flex-start': {
     justifyContent: 'flex-start',
   },
@@ -43,24 +46,6 @@ function Flex({
   justifyContent = 'flex-start',
   wrap = 'wrap',
 
-  // margins
-  m,
-  mt,
-  mb,
-  ml,
-  mr,
-  mx,
-  my,
-
-  // padding
-  p,
-  pt,
-  pb,
-  pl,
-  pr,
-  px,
-  py,
-
   // style
   style,
 
@@ -69,31 +54,7 @@ function Flex({
   width,
   ...props
 }: Props) {
-  const marginStyles = useMemo(
-    () => ({
-      margin: theme.spacing(m),
-      marginTop: theme.spacing(mt),
-      marginBottom: theme.spacing(mb),
-      marginLeft: theme.spacing(ml),
-      marginRight: theme.spacing(mr),
-      marginHorizontal: theme.spacing(mx),
-      marginVertical: theme.spacing(my),
-    }),
-    [m, mt, mb, ml, mr, mx, my]
-  );
-
-  const paddingStyles = useMemo(
-    () => ({
-      padding: theme.spacing(p),
-      paddingTop: theme.spacing(pt),
-      paddingBottom: theme.spacing(pb),
-      paddingLeft: theme.spacing(pl),
-      paddingRight: theme.spacing(pr),
-      paddingHorizontal: theme.spacing(px),
-      paddingVertical: theme.spacing(py),
-    }),
-    [p, pt, pb, pl, pr, px, py]
-  );
+  const spacingStyles = useSpacing(props);
 
   return (
     <SafeAreaView
@@ -104,8 +65,7 @@ function Flex({
           ...styles[direction],
           ...styles[`justify-content-${justifyContent}`],
           ...styles[wrap],
-          ...marginStyles,
-          ...paddingStyles,
+          ...spacingStyles,
           height,
           width,
         },

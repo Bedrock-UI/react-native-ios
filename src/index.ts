@@ -12,6 +12,7 @@ export { TopNavigation } from 'components/TopNavigation';
 
 // hooks
 export { useActionSheet } from 'hooks/useActionSheet';
+export { useSpacing } from 'hooks/useSpacing';
 
 // theme
 export { theme } from 'theme';
