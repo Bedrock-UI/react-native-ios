@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useSpacing } from 'hooks/useSpacing';
 
 import type { Props } from './Flex.types';
@@ -7,6 +7,7 @@ import type { Props } from './Flex.types';
 const styles = StyleSheet.create({
   flex: {
     display: 'flex',
+    flex: 1,
   },
 
   // flex direction
@@ -57,7 +58,7 @@ function Flex({
   const spacingStyles = useSpacing(props);
 
   return (
-    <SafeAreaView
+    <View
       {...props}
       style={[
         {

@@ -15,7 +15,9 @@ function App() {
   const { showActionSheetWithOptions } = useActionSheet();
 
   return (
-    <SafeAreaView style={{ backgroundColor: theme.palette.neutral[600], height: '100%' }}>
+    <SafeAreaView
+      style={{ backgroundColor: theme.palette.neutral[600], height: '100%', width: '100%' }}
+    >
       <ScrollView>
         <TopNavigation
           left={{ icon: <Ionicons name="chevron-back" size={32} />, title: 'Back' }}
@@ -23,7 +25,7 @@ function App() {
           title="Settings"
         />
 
-        <Flex my={4}>
+        <Flex my={4} width="100%">
           <HorizontalScroll>
             <Button size="small" title="Filled Small" variant="filled" />
             <Button size="small" title="Gray Small" variant="gray" />
