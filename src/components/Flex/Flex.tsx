@@ -7,7 +7,6 @@ import type { Props } from './Flex.types';
 const styles = StyleSheet.create({
   flex: {
     display: 'flex',
-    flex: 1,
   },
 
   // flex direction
