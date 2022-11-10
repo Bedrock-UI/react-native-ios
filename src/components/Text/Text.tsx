@@ -6,7 +6,6 @@ import type { Props } from './Text.types';
 
 const styles = StyleSheet.create({
   base: {
-    color: theme.palette.label,
     display: 'flex',
   },
 
@@ -44,7 +43,13 @@ const styles = StyleSheet.create({
   },
 });
 
-function Text({ align = 'left', variant, weight = 'normal', ...props }: Props) {
+function Text({
+  align = 'left',
+  color = theme.palette.label,
+  variant,
+  weight = 'normal',
+  ...props
+}: Props) {
   const alignStyle = useMemo(() => styles[`align-${align}`], [align]);
   const variantStyle = useMemo(() => styles[variant], [variant]);
   const weightStyle = useMemo(() => styles[`weight-${weight}`], [weight]);
@@ -53,6 +58,7 @@ function Text({ align = 'left', variant, weight = 'normal', ...props }: Props) {
     <ReactNativeText
       {...props}
       style={{
+        color,
         ...styles.base,
         ...alignStyle,
         ...variantStyle,

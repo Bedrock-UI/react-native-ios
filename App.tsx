@@ -1,5 +1,5 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { Modal, SafeAreaView, ScrollView } from 'react-native';
 import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
 import { HorizontalScroll } from 'components/HorizontalScroll';
@@ -20,8 +20,12 @@ function App() {
     >
       <ScrollView>
         <TopNavigation
-          left={{ icon: <Ionicons name="chevron-back" size={32} />, title: 'Back' }}
-          right={{ title: 'Save' }}
+          left={{
+            icon: <Ionicons name="chevron-back" color={theme.palette.primary.main} size={28} />,
+            onPress: () => console.log('left press'),
+            title: 'Back',
+          }}
+          right={{ onPress: () => console.log('right press'), title: 'Save' }}
           title="Settings"
         />
 
