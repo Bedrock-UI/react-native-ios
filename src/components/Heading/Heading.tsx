@@ -30,39 +30,39 @@ const styles = StyleSheet.create({
     fontWeight: '200',
   },
 
-  display1: {
+  'level-display1': {
     fontSize: theme.typography.display1.fontSize,
     lineHeight: theme.typography.display1.lineHeight,
   },
-  h1: {
+  'level-1': {
     fontSize: theme.typography.h1.fontSize,
     lineHeight: theme.typography.h1.lineHeight,
   },
-  h2: {
+  'level-2': {
     fontSize: theme.typography.h2.fontSize,
     lineHeight: theme.typography.h2.lineHeight,
   },
-  h3: {
+  'level-3': {
     fontSize: theme.typography.h3.fontSize,
     lineHeight: theme.typography.h3.lineHeight,
   },
-  h4: {
+  'level-4': {
     fontSize: theme.typography.h4.fontSize,
     lineHeight: theme.typography.h4.lineHeight,
   },
-  h5: {
+  'level-5': {
     fontSize: theme.typography.h5.fontSize,
     lineHeight: theme.typography.h5.lineHeight,
   },
-  h6: {
+  'level-6': {
     fontSize: theme.typography.h6.fontSize,
     lineHeight: theme.typography.h6.lineHeight,
   },
 });
 
-function Heading({ align = 'left', variant, weight = 'normal', ...props }: Props) {
+function Heading({ align = 'left', level, weight = 'normal', ...props }: Props) {
   const alignStyle = useMemo(() => styles[`align-${align}`], [align]);
-  const variantStyle = useMemo(() => styles[variant], [variant]);
+  const levelStyle = useMemo(() => styles[`level-${level}`], [level]);
   const weightStyle = useMemo(() => styles[`weight-${weight}`], [weight]);
 
   return (
@@ -71,7 +71,7 @@ function Heading({ align = 'left', variant, weight = 'normal', ...props }: Props
       style={{
         ...styles.base,
         ...alignStyle,
-        ...variantStyle,
+        ...levelStyle,
         ...weightStyle,
       }}
     />
