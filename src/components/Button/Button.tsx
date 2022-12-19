@@ -72,7 +72,7 @@ const textStyles = StyleSheet.create({
     color: theme.palette.primary.main,
   },
   filled: {
-    color: theme.palette.background,
+    color: theme.palette.white,
   },
   small: {
     fontSize: theme.typography.body2.fontSize,

@@ -87,6 +87,7 @@ const theme = {
       800: '#ff8f00',
       900: '#ff6f00',
     },
+    white: '#FFFFFF',
   },
   spacing: (value: number | string | undefined) => {
     if (value === undefined) {
