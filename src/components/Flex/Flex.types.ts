@@ -3,6 +3,7 @@ import type { ViewProps } from 'react-native';
 export interface Props {
   children?: ViewProps['children'];
   direction?: 'column' | 'row';
+  fullWidth?: boolean;
   justifyContent?: 'center' | 'flex-end' | 'flex-start' | 'space-between';
   style?: ViewProps['style'];
   wrap?: 'nowrap' | 'wrap';

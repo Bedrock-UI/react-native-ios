@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
   flex: {
     display: 'flex',
   },
+  fullWidth: {
+    width: '100%',
+  },
 
   // flex direction
   column: {
@@ -43,6 +46,7 @@ const styles = StyleSheet.create({
 function Flex({
   // flex properties
   direction = 'row',
+  fullWidth = false,
   justifyContent = 'flex-start',
   wrap = 'wrap',
 
@@ -61,13 +65,14 @@ function Flex({
       {...props}
       style={[
         {
+          height,
+          width,
           ...styles.flex,
           ...styles[direction],
+          ...(fullWidth ? styles.fullWidth : {}),
           ...styles[`justify-content-${justifyContent}`],
           ...styles[wrap],
           ...spacingStyles,
-          height,
-          width,
         },
         style,
       ]}
