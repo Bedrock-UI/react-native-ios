@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   table: {
-    backgroundColor: theme.palette.white,
+    backgroundColor: theme.palette.background,
     borderRadius: 10,
     overflow: 'hidden',
   },

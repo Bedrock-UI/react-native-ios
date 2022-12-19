@@ -48,7 +48,7 @@ const theme = {
     },
   },
   palette: {
-    background: PlatformColor('systemGray6'),
+    background: PlatformColor('systemBackground'),
     error: PlatformColor('systemRed'),
     label: PlatformColor('label'),
     neutral: {
@@ -87,7 +87,6 @@ const theme = {
       800: '#ff8f00',
       900: '#ff6f00',
     },
-    white: '#FFFFFF',
   },
   spacing: (value: number | string | undefined) => {
     if (value === undefined) {

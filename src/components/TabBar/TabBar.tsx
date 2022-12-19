@@ -6,7 +6,7 @@ import type { Props, TabProps } from './TabBar.types';
 
 const tabBarStyles = StyleSheet.create({
   base: {
-    backgroundColor: theme.palette.white,
+    backgroundColor: theme.palette.background,
     borderTopColor: theme.palette.neutral[400],
     borderTopWidth: 0.5,
     bottom: 0,
