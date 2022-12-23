@@ -63,7 +63,11 @@ function App() {
         <Flex my={4}>
           <Table
             header="Networks"
-            rows={[{ rightIcon: true, title: 'Z17AHW' }, { title: 'HP24' }, { title: 'My Wifi' }]}
+            rows={[
+              { rightIcon: true, title: 'Z17AHW', subtitle: 'Test subtitle' },
+              { title: 'HP24' },
+              { title: 'My Wifi' },
+            ]}
           />
         </Flex>
 

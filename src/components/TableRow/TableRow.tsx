@@ -13,9 +13,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: 48,
+    paddingVertical: 12,
     paddingHorizontal: 16,
     width: '100%',
+  },
+  rootWithSubtitle: {
+    paddingVertical: 8,
   },
   active: {
     backgroundColor: theme.palette.neutral[500],
@@ -30,9 +33,14 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.body1.fontSize,
     lineHeight: theme.typography.body1.lineHeight,
   },
+  subtitle: {
+    color: theme.palette.secondaryLabel,
+    fontSize: theme.typography.caption.fontSize,
+    lineHeight: theme.typography.caption.lineHeight,
+  },
 });
 
-function TableRow({ last = false, onPress, rightIcon, title }: Props) {
+function TableRow({ last = false, onPress, rightIcon, subtitle, title }: Props) {
   const [active, setActive] = useState<boolean>(false);
 
   return (
@@ -43,6 +51,7 @@ function TableRow({ last = false, onPress, rightIcon, title }: Props) {
       onPressOut={() => setActive(false)}
       style={{
         ...styles.root,
+        ...(subtitle ? styles.rootWithSubtitle : {}),
         ...(active ? styles.active : {}),
         ...(last ? styles.last : {}),
       }}
@@ -50,6 +59,8 @@ function TableRow({ last = false, onPress, rightIcon, title }: Props) {
       <Flex justifyContent="space-between">
         <Flex direction="column" justifyContent="center">
           <Text style={styles.title}>{title}</Text>
+
+          {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
         </Flex>
 
         {rightIcon && (

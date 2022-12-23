@@ -51,6 +51,7 @@ const theme = {
     background: PlatformColor('systemBackground'),
     error: PlatformColor('systemRed'),
     label: PlatformColor('label'),
+    secondaryLabel: PlatformColor('secondaryLabel'),
     neutral: {
       100: PlatformColor('systemGray'),
       200: PlatformColor('systemGray2'),
