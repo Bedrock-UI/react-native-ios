@@ -8,8 +8,8 @@ const textInputStyles = StyleSheet.create({
   base: {
     backgroundColor: theme.palette.neutral[500],
     borderRadius: 8,
-    color: theme.palette.neutral[100],
-    height: 36,
+    color: theme.palette.label,
+    height: 40,
     fontSize: theme.typography.input.fontSize,
     lineHeight: theme.typography.input.lineHeight,
     padding: 8,
