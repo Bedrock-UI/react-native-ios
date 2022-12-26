@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     color: theme.palette.neutral[300],
   },
   title: {
+    color: theme.palette.label,
     fontSize: theme.typography.body1.fontSize,
     lineHeight: theme.typography.body1.lineHeight,
   },
