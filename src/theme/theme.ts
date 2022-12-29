@@ -46,6 +46,10 @@ const theme = {
       fontSize: 18,
       lineHeight: 20,
     },
+    textarea: {
+      fontSize: 18,
+      lineHeight: 24,
+    },
   },
   palette: {
     background: PlatformColor('systemBackground'),

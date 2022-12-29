@@ -8,6 +8,8 @@ export type { TabBarProps, TabProps } from 'components/TabBar';
 export type { TableProps } from 'components/Table';
 export type { TableRowProps } from 'components/TableRow';
 export type { TextProps } from 'components/Text';
+export type { TextareaProps } from 'components/Textarea';
+export type { TextInputProps } from 'components/TextInput';
 export type { TopNavigationProps } from 'components/TopNavigation';
 
 // components
@@ -19,6 +21,7 @@ export { Switch } from 'components/Switch';
 export { TabBar } from 'components/TabBar';
 export { Table } from 'components/Table';
 export { Text } from 'components/Text';
+export { Textarea } from 'components/Textarea';
 export { TextInput } from 'components/TextInput';
 export { TopNavigation } from 'components/TopNavigation';
 

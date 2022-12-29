@@ -5,6 +5,7 @@ import { Flex } from 'components/Flex';
 import { HorizontalScroll } from 'components/HorizontalScroll';
 import { TabBar } from 'components/TabBar';
 import { Table } from 'components/Table';
+import { Textarea } from 'components/Textarea';
 import { TextInput } from 'components/TextInput';
 import { TopNavigation } from 'components/TopNavigation';
 
@@ -58,6 +59,13 @@ function App() {
 
         <Flex my={4}>
           <TextInput value="Search" />
+        </Flex>
+
+        <Flex my={4}>
+          <Textarea
+            numberOfLines={3}
+            value={`Textarea content\nTextarea content\nTextarea content`}
+          />
         </Flex>
 
         <Flex my={4}>
