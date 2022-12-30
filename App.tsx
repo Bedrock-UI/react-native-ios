@@ -73,7 +73,7 @@ function App() {
             header="Networks"
             rows={[
               { rightIcon: true, title: 'Z17AHW', subtitle: 'Test subtitle' },
-              { title: 'HP24' },
+              { rightText: '12345', title: 'HP24' },
               { title: 'My Wifi' },
             ]}
           />

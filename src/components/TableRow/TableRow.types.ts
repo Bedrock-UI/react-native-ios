@@ -1,9 +1,20 @@
 import type { TouchableOpacityProps } from 'react-native';
 
-export interface Props {
+interface BaseProps {
   last?: boolean;
   onPress?: TouchableOpacityProps['onPress'];
-  rightIcon?: boolean;
   subtitle?: string;
   title: string;
 }
+
+interface RightIconProps extends BaseProps {
+  rightIcon?: boolean;
+  rightText?: never;
+}
+
+interface RightTextProps extends BaseProps {
+  rightIcon?: never;
+  rightText?: string;
+}
+
+export type Props = RightIconProps | RightTextProps;

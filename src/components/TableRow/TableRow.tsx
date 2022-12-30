@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.body1.fontSize,
     lineHeight: theme.typography.body1.lineHeight,
   },
+  rightText: {
+    color: theme.palette.secondaryLabel,
+    fontSize: theme.typography.body1.fontSize,
+    lineHeight: theme.typography.body1.lineHeight,
+  },
   subtitle: {
     color: theme.palette.secondaryLabel,
     fontSize: theme.typography.caption.fontSize,
@@ -41,7 +46,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function TableRow({ last = false, onPress, rightIcon, subtitle, title }: Props) {
+function TableRow({ last = false, onPress, rightIcon, rightText, subtitle, title }: Props) {
   const [active, setActive] = useState<boolean>(false);
 
   return (
@@ -67,6 +72,12 @@ function TableRow({ last = false, onPress, rightIcon, subtitle, title }: Props) 
         {rightIcon && (
           <Flex direction="column" justifyContent="center">
             <Ionicons name="chevron-forward" style={styles.rightIcon} size={18} />
+          </Flex>
+        )}
+
+        {rightText && (
+          <Flex direction="column" justifyContent="center">
+            <Text style={styles.rightText}>{rightText}</Text>
           </Flex>
         )}
       </Flex>
