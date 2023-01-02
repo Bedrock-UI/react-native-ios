@@ -25,6 +25,7 @@ function Textarea({ numberOfLines, style, ...props }: Props) {
       {...props}
       multiline
       numberOfLines={numberOfLines}
+      placeholderTextColor={theme.palette.secondaryLabel}
       style={[
         style,
         textAreaStyles.base,

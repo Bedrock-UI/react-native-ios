@@ -18,7 +18,13 @@ const textInputStyles = StyleSheet.create({
 });
 
 function TextInput(props: Props) {
-  return <TextInputBase {...props} style={textInputStyles.base} />;
+  return (
+    <TextInputBase
+      {...props}
+      placeholderTextColor={theme.palette.secondaryLabel}
+      style={textInputStyles.base}
+    />
+  );
 }
 
 export default TextInput;
