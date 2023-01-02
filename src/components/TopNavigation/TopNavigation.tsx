@@ -6,10 +6,13 @@ import { Text } from '../Text';
 
 import type { Props } from './TopNavigation.types';
 
-const topNavigationStyles = StyleSheet.create({
-  base: {
+const styles = StyleSheet.create({
+  root: {
+    alignItems: 'center',
+    alignContent: 'center',
     borderBottomColor: theme.palette.neutral[400],
     borderBottomWidth: 0.5,
+    height: 42,
   },
   buttonText: {
     color: theme.palette.primary.main,
@@ -23,8 +26,8 @@ const topNavigationStyles = StyleSheet.create({
 
 function TopNavigation({ left, right, title = '' }: Props) {
   return (
-    <Flex justifyContent="space-between" height={42} width="100%" style={topNavigationStyles.base}>
-      <Flex direction="column" justifyContent="center">
+    <Flex fullWidth justifyContent="space-between" style={styles.root}>
+      <Flex style={{ flex: 1, justifyContent: 'flex-start' }}>
         <TouchableOpacity onPress={left?.onPress}>
           <Flex px={left?.icon ? 2 : 4}>
             {left?.icon && (
@@ -42,13 +45,13 @@ function TopNavigation({ left, right, title = '' }: Props) {
         </TouchableOpacity>
       </Flex>
 
-      <Flex direction="column" justifyContent="center">
+      <Flex>
         <TouchableOpacity>
           <Text variant="body1">{title}</Text>
         </TouchableOpacity>
       </Flex>
 
-      <Flex direction="column" justifyContent="center">
+      <Flex style={{ flex: 1, justifyContent: 'flex-end' }}>
         <TouchableOpacity onPress={right?.onPress}>
           <Flex px={right?.icon ? 2 : 4}>
             {right?.icon && (
