@@ -1,6 +1,6 @@
 import type { ViewProps } from 'react-native';
 
-export interface Props {
+export interface Props extends ViewProps {
   children?: ViewProps['children'];
   direction?: 'column' | 'row';
   fullWidth?: boolean;
