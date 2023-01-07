@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   'weight-light': {
-    fontWeight: '200',
+    fontWeight: '300',
   },
 
   body1: {

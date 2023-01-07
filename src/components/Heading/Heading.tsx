@@ -6,7 +6,6 @@ import type { Props } from './Heading.types';
 
 const styles = StyleSheet.create({
   base: {
-    color: theme.palette.label,
     display: 'flex',
   },
 
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   'weight-light': {
-    fontWeight: '200',
+    fontWeight: '300',
   },
 
   'level-display1': {
@@ -60,7 +59,13 @@ const styles = StyleSheet.create({
   },
 });
 
-function Heading({ align = 'left', level, weight = 'normal', ...props }: Props) {
+function Heading({
+  align = 'left',
+  color = theme.palette.label,
+  level,
+  weight = 'normal',
+  ...props
+}: Props) {
   const alignStyle = useMemo(() => styles[`align-${align}`], [align]);
   const levelStyle = useMemo(() => styles[`level-${level}`], [level]);
   const weightStyle = useMemo(() => styles[`weight-${weight}`], [weight]);
@@ -69,6 +74,7 @@ function Heading({ align = 'left', level, weight = 'normal', ...props }: Props) 
     <Text
       {...props}
       style={{
+        color,
         ...styles.base,
         ...alignStyle,
         ...levelStyle,
