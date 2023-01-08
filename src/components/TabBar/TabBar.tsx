@@ -29,7 +29,7 @@ const tabStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   label: {
-    fontSize: 12,
+    fontSize: 10,
   },
 });
 
