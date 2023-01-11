@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import { theme } from 'theme';
 
 import type { Props, TabProps } from './TabBar.types';
@@ -37,7 +37,7 @@ function TabBar({ children }: Props) {
   return <SafeAreaView style={tabBarStyles.base}>{children}</SafeAreaView>;
 }
 
-function Tab({ icon, label = '', labelColor, onPress }: TabProps) {
+function Tab({ icon, label = '', labelColor = theme.palette.label, onPress }: TabProps) {
   return (
     <TouchableOpacity activeOpacity={1} onPress={onPress} style={tabStyles.base}>
       {icon}
