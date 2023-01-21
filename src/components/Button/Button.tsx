@@ -48,7 +48,7 @@ const buttonStyles = StyleSheet.create({
     backgroundColor: theme.palette.primary.main,
   },
   error: {
-    backgroundColor: theme.palette.error,
+    backgroundColor: theme.palette.error[600],
   },
   fullWidth: {
     width: '100%',

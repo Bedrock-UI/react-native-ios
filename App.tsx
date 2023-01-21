@@ -58,7 +58,7 @@ function App() {
         </Flex>
 
         <Flex my={4}>
-          <TextInput value="Search" />
+          <TextInput error helperText="Search is required" value="Search" />
         </Flex>
 
         <Flex my={4}>
