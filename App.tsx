@@ -72,8 +72,16 @@ function App() {
           <Table
             header="Networks"
             rows={[
-              { rightIcon: true, title: 'Z17AHW', subtitle: 'Test subtitle' },
-              { rightText: '12345', title: 'HP24' },
+              {
+                rightIcon: true,
+                title: 'Z17AHW',
+                subtitle: 'Test subtitle',
+              },
+              {
+                left: <Ionicons name="add-circle" size={24} />,
+                rightText: '12345',
+                title: 'HP24',
+              },
               { title: 'My Wifi' },
             ]}
           />

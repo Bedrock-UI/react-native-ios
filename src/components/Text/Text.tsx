@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   'weight-normal': {
-    fontWeight: '500',
+    fontWeight: '400',
   },
   'weight-light': {
     fontWeight: '300',
