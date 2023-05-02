@@ -1,5 +1,5 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Modal, SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
 import { HorizontalScroll } from 'components/HorizontalScroll';

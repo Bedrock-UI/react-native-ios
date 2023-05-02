@@ -38,17 +38,26 @@ const styles = StyleSheet.create({
   },
 });
 
-function TableRow({ last = false, left, onPress, rightIcon, rightText, subtitle, title }: Props) {
+function TableRow({
+  disablePress,
+  last = false,
+  left,
+  onPress,
+  rightIcon,
+  rightText,
+  subtitle,
+  title,
+}: Props) {
   const [active, setActive] = useState<boolean>(false);
 
   const rootStyles = useMemo(
     () => ({
       ...styles.root,
       ...(subtitle ? styles.rootWithSubtitle : {}),
-      ...(active ? styles.active : {}),
+      ...(active && !disablePress ? styles.active : {}),
       ...(last ? styles.last : {}),
     }),
-    [active, last, subtitle]
+    [active, disablePress, last, subtitle]
   );
 
   return (

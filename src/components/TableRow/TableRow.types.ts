@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { TouchableOpacityProps } from 'react-native';
 
 interface BaseProps {
+  disablePress?: boolean;
   last?: boolean;
   left?: ReactNode;
   onPress?: TouchableOpacityProps['onPress'];

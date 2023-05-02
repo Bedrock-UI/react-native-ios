@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "import", "react-hooks"],
+  "rules": {
+    "import/no-anonymous-default-export": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+    "@typescript-eslint/consistent-type-imports": "warn"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "@typescript-eslint/parser": "./tsconfig.json"
+    }
+  }
+}
