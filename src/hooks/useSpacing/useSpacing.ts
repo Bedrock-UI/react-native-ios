@@ -3,7 +3,25 @@ import { theme } from 'theme';
 
 import type { Spacing } from 'types/spacing';
 
-function useSpacing({ m, mt, mb, ml, mr, mx, my, p, pt, pb, pl, pr, px, py }: Spacing) {
+function useSpacing({
+  columnGap,
+  rowGap,
+  gap,
+  m,
+  mt,
+  mb,
+  ml,
+  mr,
+  mx,
+  my,
+  p,
+  pt,
+  pb,
+  pl,
+  pr,
+  px,
+  py,
+}: Spacing) {
   const margins = useMemo(() => {
     if (m !== undefined) {
       return {
@@ -34,7 +52,17 @@ function useSpacing({ m, mt, mb, ml, mr, mx, my, p, pt, pb, pl, pr, px, py }: Sp
     };
   }, [p, pt, pb, pl, pr, px, py]);
 
+  const gaps = useMemo(
+    () => ({
+      gap: theme.spacing(gap),
+      columnGap: theme.spacing(columnGap),
+      rowGap: theme.spacing(rowGap),
+    }),
+    [gap, columnGap, rowGap]
+  );
+
   return {
+    ...gaps,
     ...margins,
     ...padding,
   };

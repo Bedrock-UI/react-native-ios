@@ -16,4 +16,9 @@ export interface Spacing {
   pr?: number;
   pt?: number;
   py?: number;
+
+  // gaps
+  columnGap?: number;
+  rowGap?: number;
+  gap?: number;
 }

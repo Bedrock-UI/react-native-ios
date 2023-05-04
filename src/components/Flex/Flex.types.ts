@@ -26,6 +26,11 @@ export interface Props extends ViewProps {
   pt?: number;
   py?: number;
 
+  // gaps
+  columnGap?: number;
+  rowGap?: number;
+  gap?: number;
+
   // sizing
   height?: number | string;
   width?: number | string;
