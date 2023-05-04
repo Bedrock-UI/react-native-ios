@@ -106,7 +106,7 @@ const theme = {
     },
     white: '#FFFFFF',
   },
-  spacing: (value: number | string | undefined) => {
+  spacing: <T = number | string>(value: T) => {
     if (value === undefined) {
       return undefined;
     }
@@ -115,7 +115,11 @@ const theme = {
       return value;
     }
 
-    return value * 4;
+    if (typeof value === 'number') {
+      return value * 4;
+    }
+
+    return undefined;
   },
 };
 
