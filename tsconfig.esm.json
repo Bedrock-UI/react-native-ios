@@ -5,13 +5,16 @@
     "declaration": true,
     "esModuleInterop": true,
     "jsx": "react-native",
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "outDir": "lib/esm",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2019"
+    "target": "es2022"
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [

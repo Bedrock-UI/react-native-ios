@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView } from 'react-native';
 import { Button } from 'components/Button';
 import { Flex } from 'components/Flex';
 import { HorizontalScroll } from 'components/HorizontalScroll';
+import { SegmentedControl } from 'components/SegmentedControl';
 import { TabBar } from 'components/TabBar';
 import { Table } from 'components/Table';
 import { Textarea } from 'components/Textarea';
@@ -28,6 +29,14 @@ function App() {
           }}
           right={{ onPress: () => console.log('right press'), title: 'Save' }}
           title="Settings"
+        />
+
+        <SegmentedControl
+          controls={[{ title: 'Option 1' }, { title: 'Option 2' }, { title: 'Option 3' }]}
+          selectedIndex={0}
+          onChange={() => {
+            console.log('here');
+          }}
         />
 
         <Flex my={4} width="100%">
