@@ -121,6 +121,6 @@ const iosTheme = {
 
     return undefined;
   },
-};
+} as const;
 
 export { iosTheme };

@@ -119,6 +119,6 @@ const androidTheme = {
 
     return undefined;
   },
-};
+} as const;
 
 export { androidTheme };
