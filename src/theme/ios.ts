@@ -1,6 +1,6 @@
 import { PlatformColor } from 'react-native';
 
-const theme = {
+const iosTheme = {
   typography: {
     display1: {
       fontSize: 100,
@@ -123,4 +123,4 @@ const theme = {
   },
 };
 
-export default theme;
+export { iosTheme };
