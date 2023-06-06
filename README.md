@@ -1,2 +1,3 @@
-# React Native iOS
-React Native iOS UI Kit
+# React Native
+
+React Native UI Kit
