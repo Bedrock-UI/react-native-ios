@@ -1,4 +1,4 @@
-import type { ViewProps } from 'react-native';
+import type { DimensionValue, ViewProps } from 'react-native';
 
 export interface Props extends ViewProps {
   children?: ViewProps['children'];
@@ -32,6 +32,6 @@ export interface Props extends ViewProps {
   gap?: number;
 
   // sizing
-  height?: number | string;
-  width?: number | string;
+  height?: DimensionValue;
+  width?: DimensionValue;
 }
