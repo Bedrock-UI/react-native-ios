@@ -1,6 +1,6 @@
 {
   "name": "@bedrock-ui/react-native",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bedrock UI React Native",
   "files": [
     "lib"
